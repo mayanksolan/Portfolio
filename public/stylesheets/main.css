@@ -1,0 +1,26 @@
+body {
+  background-color:#F5DEB3 !important;
+}
+.jumbotron {
+  background-color: #DEB887 !important;
+  text-align: center;
+  margin: 5%;
+}
+#logo {
+  margin-bottom: 20px;
+}
+.mainicons {
+  font-size: 2em;  
+}
+.icons {
+  margin-left: 2%;
+  margin-right: 2%;
+  color: black;
+}
+.icons:hover {
+  color: brown;
+  text-decoration: none;
+}
+.card {
+  background-color: #DEB887 !important;
+}
