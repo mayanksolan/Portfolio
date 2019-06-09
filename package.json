@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mayanksolan/Portfolio#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.17.1",
     "node": "^12.4.0"
   }
