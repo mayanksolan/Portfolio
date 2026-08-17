@@ -1,0 +1,320 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ReflectMe — Case Study | Mayank Solan">
+  <div class="min-h-screen">
+    <!-- Back Navigation -->
+    <header
+      class="fixed inset-x-0 top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-md"
+    >
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
+        <a href="/" class="text-sm font-semibold tracking-tight text-[var(--foreground)]">
+          ← Back
+        </a>
+        <span class="text-sm text-[var(--muted)]">ReflectMe</span>
+        <div></div>
+      </nav>
+    </header>
+
+    <!-- Case Study Content -->
+    <main class="mx-auto max-w-4xl px-6 py-32 lg:px-8">
+      <!-- Hero -->
+      <section class="mb-20">
+        <div class="mb-8">
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            02 / Product
+          </span>
+          <h1 class="mt-4 text-5xl font-semibold tracking-tight sm:text-6xl">ReflectMe</h1>
+          <p class="mt-6 text-xl leading-8 text-[var(--muted)]">
+            A feedback and reflection platform that helps people collect meaningful feedback from
+            peers, analyze patterns with AI, and turn insights into actionable growth.
+          </p>
+        </div>
+
+        <div class="mt-12 flex flex-wrap gap-2">
+          {
+            ["React", "Vite", "Supabase", "PostgreSQL", "Groq (AI)", "Resend", "Tailwind CSS"].map(
+              (tech) => (
+                <span class="rounded-full bg-[var(--sage-soft)] px-3 py-1.5 text-xs font-medium text-[var(--foreground)]">
+                  {tech}
+                </span>
+              )
+            )
+          }
+        </div>
+      </section>
+
+      <!-- The Problem -->
+      <section class="mb-16 border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">The Problem</h2>
+        <div class="space-y-4 text-lg leading-8 text-[var(--muted)]">
+          <p>
+            Feedback is uncomfortable. It's scattered across Slack threads, email, annual reviews,
+            and conversations. Most people never systematically collect it, and when they do, the
+            data sits unanalyzed. Useful patterns go unnoticed.
+          </p>
+          <p>
+            How could we make feedback collection frictionless, insightful, and actionable? What if
+            AI could find the story hiding in dozens of one-off comments?
+          </p>
+        </div>
+      </section>
+
+      <!-- The Solution -->
+      <section class="mb-16 border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">The Solution</h2>
+
+        <div class="space-y-12">
+          <div>
+            <h3 class="mb-4 text-xl font-semibold">Send Feedback Requests</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Users create feedback requests and invite peers via email. Invitees land on a simple
+              form with 3 question categories: Strengths (what you excel at), Growth Areas (where to
+              improve), and Observations (patterns you notice). Responses are anonymous by default,
+              removing social friction.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-xl font-semibold">Real-Time Overview Dashboard</h3>
+            <p class="text-lg text-[var(--muted)]">
+              As responses trickle in, the owner sees live aggregates: response count, sentiment
+              distribution (Strengths / Growth / Observations shown as percentage breakdowns), and
+              response status. The dashboard is immediately actionable — no waiting for all
+              responses to review patterns.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-xl font-semibold">AI-Powered Insights</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Using Groq's LLM (free tier, fast inference), ReflectMe analyzes all feedback and
+              generates a natural language summary: "Your feedback consistently highlights strong
+              ownership and problem-solving. Growth areas center on delegation and communication
+              under tight deadlines." This AI insight surfaces themes that individual comments might
+              not reveal.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-xl font-semibold">Full Feedback History</h3>
+            <p class="text-lg text-[var(--muted)]">
+              All feedback responses are archived. Users can tag feedback with topics, revisit old
+              reflections to see growth over time, and share curated feedback with mentors or
+              managers for coaching conversations.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-xl font-semibold">Email Notifications</h3>
+            <p class="text-lg text-[var(--muted)]">
+              The owner receives an email summary each time a new response arrives. Supabase Edge
+              Functions integrate with Resend to send templated, branded emails with a preview of
+              the feedback and a link to the live dashboard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Architecture -->
+      <section class="mb-16 border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Technical Architecture</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">Frontend: React + Vite</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Fast dev experience with Vite. React Router handles navigation. Dark/light theme
+              toggle persisted to localStorage. All theming uses CSS custom properties (<code
+                class="font-mono text-sm">--bg</code
+              >,
+              <code class="font-mono text-sm">--surface</code>, <code class="font-mono text-sm"
+                >--text</code
+              >, <code class="font-mono text-sm">--brand</code>) for seamless theme switching
+              without component changes.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">State Management: React Context</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Two contexts handle all shared state: <code class="font-mono text-sm"
+                >AuthContext</code
+              > (Supabase auth, user profile, session), and <code class="font-mono text-sm"
+                >ThemeContext</code
+              > (dark/light toggle). Both are provided at the app root, ensuring consistent auth state
+              and theme across routes.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">Backend: Supabase + PostgreSQL</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Five tables with RLS enabled: <code class="font-mono text-sm">profiles</code>,
+              <code class="font-mono text-sm">feedback_requests</code>, <code
+                class="font-mono text-sm">feedback_responses</code
+              >,
+              <code class="font-mono text-sm">reactions</code> (emoji reactions on feedback). Auth is
+              handled via Supabase Auth (Google OAuth, email/password, password reset). Profile rows are
+              auto-created via DB trigger on signup.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">AI Insights: Groq LLM</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Free tier with fast inference. On request completion, the dashboard calls the AI
+              endpoint with all feedback text. Groq analyzes patterns and returns a natural-language
+              summary. Results are cached to avoid repeated calls.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">Email Notifications: Resend</h3>
+            <p class="text-lg text-[var(--muted)]">
+              Supabase Edge Functions (PostgreSQL triggers → HTTP calls) invoke Resend API to send
+              templated emails when new feedback arrives. Emails include a preview snippet and a
+              link to view on the dashboard.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-lg font-semibold">Analytics: PostHog (Optional)</h3>
+            <p class="text-lg text-[var(--muted)]">
+              PostHog SDK tracks user behavior (page views, feedback submissions, AI insight views)
+              for product insights. Optional (disabled if no API key in env).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Visibility Model -->
+      <section class="mb-16 border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Feedback Visibility & Privacy</h2>
+
+        <div class="overflow-x-auto rounded-lg border border-[var(--border)]">
+          <table class="w-full text-sm">
+            <thead class="border-b border-[var(--border)] bg-[var(--sage-soft)]">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold">Type</th>
+                <th class="px-4 py-3 text-left font-semibold">Default Visibility</th>
+                <th class="px-4 py-3 text-left font-semibold">Owner Can</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="px-4 py-3">Positive Feedback</td>
+                <td class="px-4 py-3">Public</td>
+                <td class="px-4 py-3">Hide / Show</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3">Constructive Feedback</td>
+                <td class="px-4 py-3">Private</td>
+                <td class="px-4 py-3">Publish / Keep Private</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3">Insights</td>
+                <td class="px-4 py-3">Private</td>
+                <td class="px-4 py-3">Publish / Keep Private</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mt-6 text-lg text-[var(--muted)]">
+          This model respects the awkwardness of growth feedback — constructive comments are private
+          by default, giving owners space to reflect before deciding to share with others. Positive
+          feedback surfaces publicly to build confidence and attract opportunities.
+        </p>
+      </section>
+
+      <!-- Auth Flow -->
+      <section class="mb-16 border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Auth & Security</h2>
+
+        <div class="space-y-6 text-lg leading-8 text-[var(--muted)]">
+          <div>
+            <h3 class="mb-3 font-semibold">Signup & Profile Creation</h3>
+            <p>
+              Username + display name are stored as Supabase auth metadata. A DB trigger
+              automatically creates the profile row, avoiding the need for an extra signup form.
+              Google OAuth is supported for social login.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 font-semibold">Password Reset</h3>
+            <p>
+              "Forgot password?" triggers Supabase's built-in reset flow. Email confirms the reset
+              link, redirecting to the ResetPasswordPage where users set a new password.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 font-semibold">Row-Level Security (RLS)</h3>
+            <p>
+              All tables enforce RLS. Users see only their own profile and feedback; they can view
+              others' public profiles. Authors see their own submissions even if private. No data
+              leaks across users.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="mb-3 font-semibold">Account Deletion</h3>
+            <p>
+              The Settings page includes a "Delete Account" button. This calls a Postgres function
+              with
+              <code class="font-mono text-sm">SECURITY DEFINER</code> that cascades deletion through
+              <code class="font-mono text-sm">auth.users</code> (removing the auth record and all dependent
+              data).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lessons & Takeaways -->
+      <section class="border-t border-[var(--border)] pt-16">
+        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Lessons & Takeaways</h2>
+
+        <div class="space-y-6 text-lg leading-8 text-[var(--muted)]">
+          <p>
+            <strong>Anonymous feedback removes social friction.</strong> People give more honest, detailed
+            feedback when identity is hidden. Default anonymity, with optional attribution, balances honesty
+            and accountability.
+          </p>
+          <p>
+            <strong>Realtime aggregates beat waiting for all responses.</strong> Live dashboards showing
+            response count, sentiment, and preliminary themes reduce the anxiety of feedback collection
+            and surface patterns early.
+          </p>
+          <p>
+            <strong>AI summarization finds non-obvious patterns.</strong> Human reviewers catch obvious
+            themes; LLMs find subtle correlations and meta-patterns that make feedback transformation
+            possible, not just collection.
+          </p>
+          <p>
+            <strong>Privacy-first defaults build trust.</strong> By defaulting constructive feedback to
+            private, ReflectMe respects the vulnerability of receiving criticism. Owners choose when/if
+            to share.
+          </p>
+          <p>
+            <strong>Context matters.</strong> Pairing feedback with source (author, anonymous, timestamp)
+            and allowing owners to add private notes creates a rich, actionable record that supports coaching
+            and growth conversations.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="mt-20 flex gap-4 border-t border-[var(--border)] pt-16">
+        <a
+          href="/"
+          class="rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+        >
+          ← Back to portfolio
+        </a>
+      </section>
+    </main>
+  </div>
+</Layout>
