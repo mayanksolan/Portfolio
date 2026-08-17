@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mayank Solan logo">
+  <rect width="64" height="64" rx="18" fill="#f5f0ea"/>
+  <path d="M18 46V18h10.5c7.2 0 11.8 4.8 11.8 11.4 0 6.6-4.7 11.6-11.8 11.6H18zm8.3-6.7h2.4c4.2 0 6.8-2.6 6.8-6.1 0-3.5-2.6-6.1-6.8-6.1h-2.4v12.2z" fill="#111827"/>
+  <circle cx="46" cy="19" r="6" fill="#b78d6a"/>
+</svg>

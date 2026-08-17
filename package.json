@@ -1,25 +1,22 @@
 {
   "name": "mayank-solan-portfolio",
   "version": "1.0.0",
-  "description": "portfolio",
-  "main": "app.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mayanksolan/Portfolio.git"
-  },
-  "author": "mayank solan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mayanksolan/Portfolio/issues"
-  },
-  "homepage": "https://github.com/mayanksolan/Portfolio#readme",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.17.1",
-    "node": "^12.4.0"
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.18",
+    "tailwindcss": "^3.4.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.8.0",
+    "@types/node": "^20.14.10",
+    "typescript": "^5.4.5"
   }
 }
