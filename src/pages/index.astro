@@ -118,7 +118,11 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Pinhitch -->
         <article
-          class="group overflow-hidden rounded-3xl bg-(--sage-soft) transition-transform duration-500 hover:-translate-y-1"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-(--sage-soft) transition-transform duration-500 hover:-translate-y-1"
+          data-project-link="/work/pinhitch"
+          tabindex="0"
+          role="link"
+          aria-label="View Pinhitch case study"
         >
           <div class="grid lg:grid-cols-2">
             <div class="flex flex-col justify-between p-8 sm:p-12 lg:p-16">
@@ -173,7 +177,11 @@ import Layout from "../layouts/Layout.astro";
 
           <!-- ReflectMe -->
           <article
-            class="group mt-8 overflow-hidden rounded-3xl bg-(--terracotta-soft) transition-transform duration-500 hover:-translate-y-1"
+            class="group mt-8 cursor-pointer overflow-hidden rounded-3xl bg-(--terracotta-soft) transition-transform duration-500 hover:-translate-y-1"
+            data-project-link="/work/reflectme"
+            tabindex="0"
+            role="link"
+            aria-label="View ReflectMe case study"
           >
             <div class="grid lg:grid-cols-2">
               <div
@@ -460,5 +468,35 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </footer>
     </main>
+    <style is:global>
+      [data-project-link]:focus-visible {
+        outline: 2px solid var(--foreground);
+        outline-offset: 4px;
+      }
+    </style>
+
+    <script>
+      document.querySelectorAll("[data-project-link]").forEach((card) => {
+        const go = () => {
+          const href = card.getAttribute("data-project-link");
+          if (href) window.location.href = href;
+        };
+
+        card.addEventListener("click", (event) => {
+          const target = event.target;
+          if (target instanceof Element && target.closest("a")) return;
+          go();
+        });
+
+        card.addEventListener("keydown", (event) => {
+          const keyboardEvent = event as KeyboardEvent;
+
+          if (keyboardEvent.key === "Enter" || keyboardEvent.key === " ") {
+            keyboardEvent.preventDefault();
+            go();
+          }
+        });
+      });
+    </script>
   </div></Layout
 >
