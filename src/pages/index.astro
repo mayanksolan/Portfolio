@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { navItems, heroHighlights, featureCards, projectCards, site } from '../data/resume';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Mayank Solan | Senior Frontend Engineer" description="Senior frontend-focused developer with ETL and SQL experience building polished, scalable products.">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f5f0ea]/80 backdrop-blur-sm">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+      <a href={base} class="text-sm font-extrabold uppercase tracking-[0.18em] text-slate-800">Mayank Solan</a>
+      <nav class="flex items-center gap-6 text-sm text-slate-600" aria-label="Main navigation">
+        {navItems.map((item) => (
+          <a href={`${base}${item.href.replace('/', '')}`} class="relative transition-colors hover:text-slate-900">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_0.8fr] lg:px-8 lg:py-20">
+      <div>
+        <p class="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#b78d6a]">{site.tagline}</p>
+        <h1 class="max-w-3xl text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl lg:text-7xl">
+          Building scalable frontend products with product sense and engineering depth.
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg text-slate-600">
+          I’m a senior frontend engineer with 6+ years of experience building React and TypeScript products, with a strong background in data-heavy systems, GraphQL, and product delivery.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={`${base}work`} class="inline-flex items-center justify-center rounded-full bg-slate-800 px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-slate-900 hover:shadow-lg">View work</a>
+          <a href={`${base}contact`} class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/40 px-5 py-3 text-sm font-semibold text-slate-800 transition duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white/80 hover:shadow-lg">Let’s talk</a>
+        </div>
+
+        <ul class="mt-8 flex flex-wrap gap-3 text-sm text-slate-600">
+          {heroHighlights.map((item) => (
+            <li class="rounded-full border border-slate-200 bg-white/60 px-3 py-2">{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <aside class="rounded-[28px] border border-slate-200 bg-gradient-to-b from-[#f9f5f1] to-[#efe6dd] p-7 shadow-[0_18px_55px_rgba(29,39,49,0.08)]">
+        <span class="inline-flex rounded-full bg-[#dfe9ef] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700">
+          Currently focused on
+        </span>
+        <h2 class="mt-4 text-3xl font-bold tracking-[-0.06em] text-slate-900">
+          Frontend systems built for scale, clarity, and real product impact.
+        </h2>
+        <p class="mt-4 text-slate-600">
+          I help teams ship polished interfaces, optimize large data-heavy experiences, and connect product delivery with backend and analytics realities.
+        </p>
+        <ul class="mt-6 space-y-3 text-slate-800">
+          <li class="flex items-center gap-3 font-semibold"><span class="text-[#b78d6a] text-2xl leading-none">•</span> Product-minded engineering</li>
+          <li class="flex items-center gap-3 font-semibold"><span class="text-[#b78d6a] text-2xl leading-none">•</span> Independent delivery</li>
+          <li class="flex items-center gap-3 font-semibold"><span class="text-[#b78d6a] text-2xl leading-none">•</span> Data-aware decision making</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="mb-7">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#b78d6a]">What I bring</p>
+        <h2 class="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">From product thinking to implementation.</h2>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        {featureCards.map((feature) => (
+          <article class="rounded-[24px] border border-slate-200 bg-white/40 p-6 shadow-sm">
+            <span class="mb-4 block text-xs font-extrabold uppercase tracking-[0.18em] text-[#b78d6a]">{feature.index}</span>
+            <h3 class="mb-3 text-2xl font-bold text-slate-900">{feature.title}</h3>
+            <p class="text-slate-600">{feature.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+      <div class="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#b78d6a]">Selected work</p>
+          <h2 class="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">Builds that balance product value with technical depth.</h2>
+        </div>
+        <a href={`${base}work`} class="font-semibold text-slate-800">See all projects</a>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        {projectCards.map((project) => (
+          <article class="group rounded-[26px] border border-slate-200 bg-gradient-to-b from-white/80 to-[#f4efe9]/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(15,23,42,0.08)]">
+            <div class="mb-5 flex items-center justify-between gap-3 border-b border-slate-200 pb-3">
+              <span class="inline-flex rounded-full bg-[#edf3f6] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-700">{project.tag}</span>
+              <span class="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">{project.stack}</span>
+            </div>
+            <h3 class="mb-3 text-2xl font-bold tracking-[-0.04em] text-slate-900">{project.title}</h3>
+            <p class="text-[0.98rem] leading-7 text-slate-600">{project.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-8 border-t border-slate-200 bg-white/20">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-7 text-sm text-slate-600 sm:px-6 lg:px-8">
+      <p>Mayank Solan</p>
+      <a href={`mailto:${site.email}`} class="font-medium text-slate-800">{site.email}</a>
+    </div>
+  </footer>
+</Layout>
