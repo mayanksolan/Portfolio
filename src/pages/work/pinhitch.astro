@@ -2,268 +2,307 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Pinhitch — Case Study | Mayank Solan">
-  <div class="min-h-screen">
-    <!-- Back Navigation -->
-    <header
-      class="fixed inset-x-0 top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-md"
-    >
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
-        <a href="/" class="text-sm font-semibold tracking-tight text-[var(--foreground)]">
-          ← Back
-        </a>
-        <span class="text-sm text-[var(--muted)]">Pinhitch</span>
-        <div></div>
-      </nav>
-    </header>
+<Layout title="Pinhitch — Mayank Solan">
+  <header class="border-b border-[var(--border)]">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
+      <a href="/" class="text-sm font-semibold tracking-tight">Mayank Solan</a>
+      <a
+        href="/#work"
+        class="text-sm text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
+      >
+        ← Back to work
+      </a>
+    </nav>
+  </header>
 
-    <!-- Case Study Content -->
-    <main class="mx-auto max-w-4xl px-6 py-32 lg:px-8">
-      <!-- Hero -->
-      <section class="mb-20">
-        <div class="mb-8">
-          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
-            01 / Product
-          </span>
-          <h1 class="mt-4 text-5xl font-semibold tracking-tight sm:text-6xl">Pinhitch</h1>
-          <p class="mt-6 text-xl leading-8 text-[var(--muted)]">
-            A hyperlocal community platform where people pin problems at map locations, discover
-            neighbors facing the same issues, and collaborate on solutions.
+  <main>
+    <!-- Hero -->
+    <section class="mx-auto max-w-6xl px-6 pb-16 pt-20 lg:px-8 lg:pb-20 lg:pt-28">
+      <div class="grid gap-12 lg:grid-cols-[1fr_0.38fr] lg:items-end lg:gap-20">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            Product / Case study
+          </p>
+
+          <h1
+            class="mt-5 text-6xl font-medium leading-[0.95] tracking-[-0.05em] sm:text-7xl lg:text-[7rem]"
+          >
+            Pinhitch
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-xl leading-8 text-[var(--muted)] sm:text-2xl sm:leading-9">
+            A map-first community platform for surfacing local problems, finding people facing the
+            same issues, and working toward solutions.
           </p>
         </div>
 
-        <div class="mt-12 flex flex-wrap gap-2">
-          {
-            ["Astro", "React", "MapLibre GL", "Supabase", "PostGIS", "Tailwind CSS"].map((tech) => (
-              <span class="rounded-full bg-[var(--sage-soft)] px-3 py-1.5 text-xs font-medium text-[var(--foreground)]">
-                {tech}
-              </span>
-            ))
-          }
-        </div>
-      </section>
-
-      <!-- The Problem -->
-      <section class="mb-16 border-t border-[var(--border)] pt-16">
-        <h2 class="mb-8 text-3xl font-semibold tracking-tight">The Problem</h2>
-        <div class="space-y-4 text-lg leading-8 text-[var(--muted)]">
-          <p>
-            When problems arise in a neighborhood — broken streetlights, pothole on Main St, local
-            flooding — people face them in isolation. You don't know if your neighbors share your
-            frustration. Local government feedback channels are slow. Community groups scatter
-            across multiple apps.
-          </p>
-          <p>
-            What if discovery could be spatial and immediate? What if solidarity and collective
-            action started with a pin on a map?
-          </p>
-        </div>
-      </section>
-
-      <!-- The Solution -->
-      <section class="mb-16 border-t border-[var(--border)] pt-16">
-        <h2 class="mb-8 text-3xl font-semibold tracking-tight">The Solution</h2>
-
-        <div class="space-y-12">
+        <dl class="grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[var(--border)] py-6 text-sm">
           <div>
-            <h3 class="mb-4 text-xl font-semibold">Pin Your Problem</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Users drop pins at map locations with a category (urgent, civic, community, personal),
-              description, and optional anonymity. Personal problems can be fuzzified (randomized
-              offset for privacy). The pin appears instantly on the map with its category color.
-            </p>
+            <dt class="text-[var(--muted)]">Role</dt>
+            <dd class="mt-1 font-semibold">Product &amp; Full-stack</dd>
           </div>
-
           <div>
-            <h3 class="mb-4 text-xl font-semibold">Discover Nearby Solidarity</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Open the map and see all active pins within your viewport. Each pin shows a badge
-              reflecting the latest update status (in progress, has ETA, escalated, resolved). Tap a
-              pin to open the detail panel and see the full thread of updates and comments.
-            </p>
+            <dt class="text-[var(--muted)]">Frontend</dt>
+            <dd class="mt-1 font-semibold">Astro · React</dd>
           </div>
-
           <div>
-            <h3 class="mb-4 text-xl font-semibold">Signal Solidarity with "Me Too"</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Anyone can tap "Me Too" to register that they share the problem. Me-too counts are
-              displayed on each pin, and for civic/community problems, each me-too adds resolution
-              time (preventing premature expiry of active issues). This transforms isolated
-              complaints into visible collective action.
-            </p>
+            <dt class="text-[var(--muted)]">Data</dt>
+            <dd class="mt-1 font-semibold">Supabase · PostGIS</dd>
           </div>
-
           <div>
-            <h3 class="mb-4 text-xl font-semibold">Post Updates, Confirm Fixes</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Problem creators and contributors post updates tagged as "in progress," "has ETA,"
-              "escalated," or "resolved." For civic and community problems, resolution requires 3
-              confirmations from different users (preventing false fixes). Resolved pins turn gray
-              and shrink, signaling that the problem is handled.
-            </p>
+            <dt class="text-[var(--muted)]">Maps</dt>
+            <dd class="mt-1 font-semibold">MapLibre</dd>
           </div>
+        </dl>
+      </div>
+    </section>
 
-          <div>
-            <h3 class="mb-4 text-xl font-semibold">Rich Features Built In</h3>
-            <ul class="space-y-2 text-lg text-[var(--muted)]">
-              <li>
-                <strong>Heat/Pin toggle:</strong> Visualize problem density as heatmaps or individual
-                pins
-              </li>
-              <li>
-                <strong>Place search:</strong> Nominatim-powered search with no API key required
-              </li>
-              <li>
-                <strong>Geolocation:</strong> Continuous GPS updates center the map on your location
-              </li>
-              <li>
-                <strong>Interests & communities:</strong> Join neighborhood groups, wave to members, share
-                skills
-              </li>
-              <li>
-                <strong>Direct messaging:</strong> Coordinate within interest groups
-              </li>
-              <li>
-                <strong>FixIt rallies:</strong> Organize community work parties with helpers and plans
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Technical Architecture -->
-      <section class="mb-16 border-t border-[var(--border)] pt-16">
-        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Technical Architecture</h2>
-
-        <div class="space-y-8">
-          <div>
-            <h3 class="mb-3 text-lg font-semibold">Frontend: Astro + React Islands</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Astro serves a static shell with selective hydration. Interactive components (map,
-              modals, realtime UI) are React islands with <code class="font-mono text-sm"
-                >client:load</code
-              > or <code class="font-mono text-sm">client:idle</code> directives, keeping static pages
-              lean.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="mb-3 text-lg font-semibold">Map & Geo: MapLibre + PostGIS</h3>
-            <p class="text-lg text-[var(--muted)]">
-              MapLibre GL (open-source, no API key) renders the map with OpenFreeMap tiles. Backend
-              uses PostGIS (<code class="font-mono text-sm">ST_DWithin</code> queries) to find problems
-              within a radius, handling geo-fencing with high performance. Realtime subscriptions update
-              the map when new problems are posted nearby.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="mb-3 text-lg font-semibold">Realtime State: Supabase + Postgres</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Supabase Realtime subscriptions listen for INSERT/UPDATE/DELETE on the <code
-                class="font-mono text-sm">problems</code
-              > table. Inserts trigger a full refetch; updates patch local state; deletes remove pins
-              immediately. All visibility is controlled via RLS policies.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="mb-3 text-lg font-semibold">Storage: Cloudflare R2</h3>
-            <p class="text-lg text-[var(--muted)]">
-              Zero egress fees make R2 ideal for serving media in a hyperlocal app. S3-compatible
-              API, so uploads use standard presigned URLs.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Key Metrics -->
-      <section class="mb-16 border-t border-[var(--border)] pt-16">
-        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Category System & Expiry</h2>
-
-        <div class="overflow-x-auto rounded-lg border border-[var(--border)]">
-          <table class="w-full text-sm">
-            <thead class="border-b border-[var(--border)] bg-[var(--sage-soft)]">
-              <tr>
-                <th class="px-4 py-3 text-left font-semibold">Category</th>
-                <th class="px-4 py-3 text-left font-semibold">Color</th>
-                <th class="px-4 py-3 text-left font-semibold">Expiry</th>
-                <th class="px-4 py-3 text-left font-semibold">Me-Too Effect</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-[var(--border)]">
-              <tr>
-                <td class="px-4 py-3">Urgent</td>
-                <td class="px-4 py-3">Red</td>
-                <td class="px-4 py-3">7 days (fixed)</td>
-                <td class="px-4 py-3">None</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Civic</td>
-                <td class="px-4 py-3">Blue</td>
-                <td class="px-4 py-3">30 days (extendable)</td>
-                <td class="px-4 py-3">+4h 48m per me-too (capped 60d)</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Community</td>
-                <td class="px-4 py-3">Green</td>
-                <td class="px-4 py-3">30 days (extendable)</td>
-                <td class="px-4 py-3">+2h 24m per me-too (capped 60d)</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Personal</td>
-                <td class="px-4 py-3">Amber</td>
-                <td class="px-4 py-3">Never (user-controlled)</td>
-                <td class="px-4 py-3">None</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="mt-6 text-lg text-[var(--muted)]">
-          This system balances urgency (red problems are time-sensitive), collective action
-          (civic/community problems grow longer as more people engage), and privacy (personal
-          problems never expire unless the creator chooses).
-        </p>
-      </section>
-
-      <!-- Lessons & Takeaways -->
-      <section class="border-t border-[var(--border)] pt-16">
-        <h2 class="mb-8 text-3xl font-semibold tracking-tight">Lessons & Takeaways</h2>
-
-        <div class="space-y-6 text-lg leading-8 text-[var(--muted)]">
-          <p>
-            <strong>Geo as discoverability.</strong> Map-based apps feel magical when you discover that
-            dozens of neighbors face your exact problem. The spatial element creates immediate empathy
-            and social proof.
-          </p>
-          <p>
-            <strong>Realtime is essential.</strong> Supabase Realtime subscriptions make the map feel
-            alive — new pins appear instantly, updates flow without refresh, and the UI stays synchronized.
-            Optimistic updates prevent perceived lag.
-          </p>
-          <p>
-            <strong>Privacy by default, public by choice.</strong> The fuzzy location feature for personal
-            problems respects privacy concerns. Anonymous posting removes social friction. This balance
-            attracts both activists and lurkers.
-          </p>
-          <p>
-            <strong>Expiry + community confirmation prevent false solutions.</strong> Auto-expiring problems
-            ensure stale threads don't clutter the map. Requiring 3 community confirmations to resolve
-            civic problems prevents vandalism and ensures credibility.
-          </p>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="mt-20 flex gap-4 border-t border-[var(--border)] pt-16">
-        <a
-          href="/"
-          class="rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+    <!-- Product visual -->
+    <section class="mx-auto max-w-6xl px-6 lg:px-8">
+      <figure
+        class="overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--sage-soft)] p-3 sm:p-5"
+      >
+        <div
+          class="overflow-hidden rounded-[1.25rem] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
         >
-          ← Back to portfolio
+          <img
+            src="/images/pinhitch-preview.png"
+            alt="Pinhitch map interface showing local problems and community activity"
+            class="block w-full"
+          />
+        </div>
+      </figure>
+      <p class="mt-3 text-xs text-[var(--muted)]">Pinhitch — map-first community interface</p>
+    </section>
+
+    <!-- The idea -->
+    <section class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+      <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            The idea
+          </p>
+          <h2
+            class="mt-4 max-w-lg text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl"
+          >
+            Local problems are easier to solve <span class="font-display italic">together.</span>
+          </h2>
+        </div>
+
+        <div class="max-w-2xl text-base leading-7 text-[var(--muted)]">
+          <p>
+            People often face the same problems in their neighbourhood without knowing that others
+            are dealing with them too.
+          </p>
+          <p class="mt-6">
+            Pinhitch puts those problems on a map. People can post a problem at a location, discover
+            nearby issues, show support with “Me Too”, add updates, discuss the problem, and work
+            toward resolution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I built -->
+    <section class="border-y border-[var(--border)] bg-[var(--sage-soft)]">
+      <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+        <div class="max-w-2xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            What I built
+          </p>
+          <h2 class="mt-4 text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
+            A community product built around <span class="font-display italic">place.</span>
+          </h2>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-3">
+          <article
+            class="rounded-3xl border border-[var(--border)] bg-[var(--background)] p-7 lg:p-8"
+          >
+            <span class="text-sm font-semibold text-[var(--sage)]">01</span>
+            <h3 class="mt-16 text-xl font-semibold tracking-tight">Map-first discovery</h3>
+            <p class="mt-4 text-sm leading-6 text-[var(--muted)]">
+              An interactive map for nearby problem discovery, categories, place search,
+              geolocation, and map-linked state.
+            </p>
+          </article>
+
+          <article
+            class="rounded-3xl border border-[var(--border)] bg-[var(--background)] p-7 lg:p-8"
+          >
+            <span class="text-sm font-semibold text-[var(--terracotta)]">02</span>
+            <h3 class="mt-16 text-xl font-semibold tracking-tight">Realtime community</h3>
+            <p class="mt-4 text-sm leading-6 text-[var(--muted)]">
+              Supabase realtime keeps problems and community activity reflected in the interface
+              without manual refreshes.
+            </p>
+          </article>
+
+          <article
+            class="rounded-3xl border border-[var(--border)] bg-[var(--background)] p-7 lg:p-8"
+          >
+            <span class="text-sm font-semibold text-[var(--sage)]">03</span>
+            <h3 class="mt-16 text-xl font-semibold tracking-tight">Resolution workflow</h3>
+            <p class="mt-4 text-sm leading-6 text-[var(--muted)]">
+              Problems move through structured updates such as in progress, ETA, escalated, and
+              resolved, with community confirmation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering -->
+    <section class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+      <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            Engineering
+          </p>
+          <h2
+            class="mt-4 max-w-lg text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl"
+          >
+            More than a <span class="font-display italic">frontend.</span>
+          </h2>
+        </div>
+
+        <div class="max-w-2xl">
+          <p class="text-lg leading-8">
+            Pinhitch combines an Astro shell with React for interactive application areas. Supabase
+            provides authentication, Postgres, PostGIS, and realtime subscriptions.
+          </p>
+
+          <div class="mt-10 divide-y divide-[var(--border)] border-y border-[var(--border)]">
+            <article class="grid gap-3 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:gap-8">
+              <h3 class="font-semibold">Geospatial discovery</h3>
+              <p class="text-sm leading-6 text-[var(--muted)]">
+                PostGIS handles nearby discovery using geographical distance queries, making
+                location part of the application data model rather than just a visual map layer.
+              </p>
+            </article>
+
+            <article class="grid gap-3 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:gap-8">
+              <h3 class="font-semibold">Realtime state</h3>
+              <p class="text-sm leading-6 text-[var(--muted)]">
+                Supabase subscriptions keep the interface synchronized as problems and community
+                activity change, while optimistic interactions keep common actions feeling
+                immediate.
+              </p>
+            </article>
+
+            <article class="grid gap-3 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:gap-8">
+              <h3 class="font-semibold">Privacy by design</h3>
+              <p class="text-sm leading-6 text-[var(--muted)]">
+                Personal problems can use fuzzy locations so users can participate without exposing
+                their exact location to other people.
+              </p>
+            </article>
+
+            <article class="grid gap-3 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:gap-8">
+              <h3 class="font-semibold">Responsive interaction</h3>
+              <p class="text-sm leading-6 text-[var(--muted)]">
+                Desktop detail panels become draggable mobile bottom sheets, keeping the map useful
+                while preserving access to the details.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture visual -->
+    <section class="border-y border-[var(--border)] bg-[var(--terracotta-soft)]">
+      <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+              Architecture
+            </p>
+            <h2 class="mt-4 text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
+              Keeping the UI separate from the <span class="font-display italic">data layer.</span>
+            </h2>
+            <p class="mt-6 max-w-lg text-base leading-7 text-[var(--muted)]">
+              Database access lives in domain-level query modules instead of being scattered through
+              components. That keeps product UI, application logic, and persistence easier to reason
+              about.
+            </p>
+          </div>
+
+          <div
+            class="rounded-3xl border border-white/70 bg-[var(--background)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.06)] sm:p-8"
+          >
+            <div class="rounded-2xl border border-[var(--border)] p-5">
+              <p class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                Application flow
+              </p>
+
+              <div class="mt-7 space-y-3 text-sm">
+                <div class="rounded-xl bg-[var(--sage-soft)] px-4 py-3 font-semibold">
+                  React components
+                </div>
+                <div class="text-center text-[var(--muted)]">↓</div>
+                <div class="rounded-xl border border-[var(--border)] px-4 py-3 font-semibold">
+                  Domain hooks
+                </div>
+                <div class="text-center text-[var(--muted)]">↓</div>
+                <div class="rounded-xl border border-[var(--border)] px-4 py-3 font-semibold">
+                  Query / mutation modules
+                </div>
+                <div class="text-center text-[var(--muted)]">↓</div>
+                <div class="rounded-xl bg-[var(--terracotta-soft)] px-4 py-3 font-semibold">
+                  Supabase / Postgres / PostGIS
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+          Reflection
+        </p>
+        <h2 class="mt-4 text-4xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
+          Building the product was only part of the <span class="font-display italic">problem.</span
+          >
+        </h2>
+
+        <div class="mt-8 space-y-6 text-base leading-7 text-[var(--muted)]">
+          <p>
+            Pinhitch pushed me beyond frontend implementation into product architecture, geospatial
+            data modelling, realtime systems, and privacy considerations.
+          </p>
+          <p>
+            The biggest lesson was that data freshness, privacy, mobile interaction,
+            discoverability, and network density all become part of the engineering problem when the
+            product depends on people and place.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="border-t border-[var(--border)]">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-16 sm:flex-row sm:items-center sm:justify-between lg:px-8 lg:py-20"
+      >
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--terracotta)]">
+            Next project
+          </p>
+          <h2 class="mt-3 text-3xl font-medium tracking-[-0.03em]">See ReflectMe.</h2>
+        </div>
+
+        <a
+          href="/work/reflectme"
+          class="inline-flex w-fit rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+        >
+          ReflectMe →
         </a>
-      </section>
-    </main>
-  </div>
+      </div>
+    </section>
+  </main>
 </Layout>
