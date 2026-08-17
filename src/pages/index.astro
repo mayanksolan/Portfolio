@@ -1,0 +1,464 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Mayank Solan — Senior Frontend Engineer">
+  <div class="min-h-[78vh]">
+    <!-- Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b bg-(--border) backdrop-blur-md">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
+        <a href="/" class="text-sm font-semibold tracking-tight text-(--foreground)">
+          Mayank Solan
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm text-(--muted) sm:flex">
+          <a class="transition-colors hover:text-(--foreground)" href="#work"> Work </a>
+          <a class="transition-colors hover:text-(--foreground)" href="#about"> About </a>
+          <a class="transition-colors hover:text-(--foreground)" href="#contact"> Contact </a>
+        </div>
+
+        <a
+          href="#contact"
+          class="rounded-full border bg-(--border) px-4 py-2 text-xs font-semibold transition-colors hover:bg-(--sage-soft)"
+        >
+          Let's talk
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section class="mx-auto flex min-h-screen max-w-6xl items-center px-6 pb-20 pt-32 lg:px-8">
+        <div class="w-full">
+          <div
+            class="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)"
+          >
+            <span class="h-2 w-2 rounded-full bg-(--sage)"></span>
+            Senior Frontend Engineer
+          </div>
+
+          <h1
+            class="max-w-5xl text-5xl font-medium leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-8xl"
+          >
+            I build web products
+            <br />
+            <span class="font-display font-normal italic text-(--sage)">
+              from idea to production.
+            </span>
+          </h1>
+
+          <div
+            class="mt-10 flex flex-col justify-between gap-8 border-t bg-(--border) pt-8 sm:flex-row sm:items-end px-6 py-4 sm:px-8 sm:py-5"
+          >
+            <p class="max-w-xl text-base leading-7 text-(--muted) sm:text-lg">
+              Frontend-focused, product-minded, with a foundation in data engineering, SQL, and
+              databases.
+            </p>
+
+            <div class="flex shrink-0 gap-3">
+              <a
+                href="#work"
+                class="rounded-full bg-(--foreground) px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                View my work →
+              </a>
+
+              <a
+                href="#contact"
+                class="rounded-full border bg-(--border) px-6 py-3 text-sm font-semibold transition-colors hover:bg-(--sage-soft)"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proof -->
+      <section class="border-y bg-(--border)">
+        <div class="mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4 lg:px-8">
+          <div class="border-r bg-(--border) py-8 pr-6">
+            <p class="text-3xl font-semibold tracking-tight">6+</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.15em] text-(--muted)">Years frontend</p>
+          </div>
+
+          <div class="border-r-0 py-8 pl-6 lg:border-r lg:pl-6">
+            <p class="text-3xl font-semibold tracking-tight">17+</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.15em] text-(--muted)">Years engineering</p>
+          </div>
+
+          <div class="hidden border-r bg-(--border) py-8 pl-6 lg:block">
+            <p class="text-3xl font-semibold tracking-tight">2</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.15em] text-(--muted)">
+              Independent products
+            </p>
+          </div>
+
+          <div class="hidden py-8 pl-6 lg:block">
+            <p class="text-3xl font-semibold tracking-tight">SQL</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.15em] text-(--muted)">Data foundation</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section id="work" class="scroll-mt-24 mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+        <div class="mb-16">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--terracotta)">
+            Selected work
+          </p>
+
+          <h2
+            class="mt-4 max-w-2xl text-4xl font-medium leading-tight tracking-[-0.035em] sm:text-5xl"
+          >
+            Things I've built
+            <span class="font-display font-normal italic"> from scratch.</span>
+          </h2>
+        </div>
+
+        <!-- Pinhitch -->
+        <article
+          class="group overflow-hidden rounded-3xl bg-(--sage-soft) transition-transform duration-500 hover:-translate-y-1"
+        >
+          <div class="grid lg:grid-cols-2">
+            <div class="flex flex-col justify-between p-8 sm:p-12 lg:p-16">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
+                  01 / Product
+                </p>
+
+                <h3 class="mt-6 text-4xl font-semibold tracking-[-0.03em]">Pinhitch</h3>
+
+                <p class="mt-5 max-w-lg text-base leading-7 text-(--muted)">
+                  A hyperlocal community platform built around maps, realtime interactions, and
+                  local problem solving.
+                </p>
+              </div>
+
+              <div class="mt-12">
+                <div class="flex flex-wrap gap-2">
+                  {
+                    ["React", "TypeScript", "Astro", "Supabase", "PostGIS", "MapLibre"].map(
+                      (tech) => (
+                        <span class="rounded-full bg-white/60 px-3 py-1.5 text-xs font-medium">
+                          {tech}
+                        </span>
+                      )
+                    )
+                  }
+                </div>
+
+                <a
+                  href="/work/pinhitch"
+                  class="mt-8 inline-flex text-sm font-semibold underline decoration-(--sage) decoration-2 underline-offset-4"
+                >
+                  View case study →
+                </a>
+              </div>
+            </div>
+
+            <div class="flex min-h-105 items-center justify-center bg-(--terracotta-soft) p-8">
+              <div
+                class="w-full max-w-xl overflow-hidden rounded-2xl border border-white/60 bg-white shadow-lg"
+              >
+                <img
+                  src="/images/pinhitch-preview.png"
+                  alt="Pinhitch hyperlocal community platform"
+                  class="block w-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ReflectMe -->
+          <article
+            class="group mt-8 overflow-hidden rounded-3xl bg-(--terracotta-soft) transition-transform duration-500 hover:-translate-y-1"
+          >
+            <div class="grid lg:grid-cols-2">
+              <div
+                class="order-2 flex min-h-105 items-center justify-center bg-(--sage-soft) p-8 lg:order-1"
+              >
+                <div
+                  class="order-2 flex min-h-105 items-center justify-center bg-(--sage-soft) p-8 lg:order-1"
+                >
+                  <div
+                    class="w-full max-w-xl overflow-hidden rounded-2xl border border-white/60 bg-white shadow-lg"
+                  >
+                    <img
+                      src="/images/reflectme-preview.png"
+                      alt="ReflectMe feedback and reflection platform"
+                      class="block w-full"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="order-1 flex flex-col justify-between p-8 sm:p-12 lg:order-2 lg:p-16">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
+                    02 / Product
+                  </p>
+
+                  <h3 class="mt-6 text-4xl font-semibold tracking-[-0.03em]">ReflectMe</h3>
+
+                  <p class="mt-5 max-w-lg text-base leading-7 text-(--muted)">
+                    A feedback and reflection platform that helps people collect meaningful feedback
+                    and turn it into actionable insights.
+                  </p>
+                </div>
+
+                <div class="mt-12">
+                  <div class="flex flex-wrap gap-2">
+                    {
+                      ["React", "Supabase", "PostgreSQL", "Groq", "Resend"].map((tech) => (
+                        <span class="rounded-full bg-white/60 px-3 py-1.5 text-xs font-medium">
+                          {tech}
+                        </span>
+                      ))
+                    }
+                  </div>
+
+                  <a
+                    href="/work/reflectme"
+                    class="mt-8 inline-flex text-sm font-semibold underline decoration-(--terracotta) decoration-2 underline-offset-4"
+                  >
+                    View case study →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </article>
+      </section>
+
+      <!-- Experience -->
+      <section class="border-t border-(--border)">
+        <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+          <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--terracotta)">
+                Experience
+              </p>
+
+              <h2
+                class="mt-4 max-w-md text-4xl font-medium leading-tight tracking-[-0.035em] sm:text-5xl"
+              >
+                From data to
+                <span class="font-display font-normal italic"> frontend.</span>
+              </h2>
+
+              <p class="mt-6 max-w-md text-base leading-7 text-(--muted)">
+                I've worked across data engineering, ETL, and frontend development, giving me a
+                broader understanding of the systems behind the UI.
+              </p>
+            </div>
+
+            <div class="divide-y divide-(--border) border-y border-(--border)">
+              <article class="grid grid-cols-[1fr_auto] gap-6 py-7">
+                <div>
+                  <h3 class="text-lg font-semibold">Hatica</h3>
+                  <p class="mt-1 text-sm text-(--muted)">Senior Frontend Engineer</p>
+                </div>
+
+                <p class="text-sm text-(--muted)">2022 — 2026</p>
+              </article>
+
+              <article class="grid grid-cols-[1fr_auto] gap-6 py-7">
+                <div>
+                  <h3 class="text-lg font-semibold">GiveIndia</h3>
+                  <p class="mt-1 text-sm text-(--muted)">Frontend / Software Engineering</p>
+                </div>
+
+                <p class="text-sm text-(--muted)">2020 — 2022</p>
+              </article>
+
+              <article class="grid grid-cols-[1fr_auto] gap-6 py-7">
+                <div>
+                  <h3 class="text-lg font-semibold">Earlier Engineering Roles</h3>
+                  <p class="mt-1 text-sm text-(--muted)">Data · ETL · SQL · Software Engineering</p>
+                </div>
+
+                <p class="text-sm text-(--muted)">2009 — 2020</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What I Bring -->
+      <section class="border-t border-(--border)">
+        <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+          <div class="max-w-2xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--terracotta)">
+              What I bring
+            </p>
+
+            <h2 class="mt-4 text-4xl font-medium leading-tight tracking-[-0.035em] sm:text-5xl">
+              More than just
+              <span class="font-display font-normal italic"> the UI.</span>
+            </h2>
+          </div>
+
+          <div
+            class="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-(--border) bg-(--border) md:grid-cols-3"
+          >
+            <article class="bg-(--background) p-8 lg:p-10">
+              <span class="text-sm font-semibold text-(--sage)">01</span>
+
+              <h3 class="mt-12 text-xl font-semibold tracking-tight">Frontend engineering</h3>
+
+              <p class="mt-4 text-sm leading-6 text-(--muted)">
+                Building scalable React applications, reusable UI systems, data-heavy interfaces,
+                and thoughtful user experiences.
+              </p>
+            </article>
+
+            <article class="bg-(--background) p-8 lg:p-10">
+              <span class="text-sm font-semibold text-(--terracotta)">02</span>
+
+              <h3 class="mt-12 text-xl font-semibold tracking-tight">Product ownership</h3>
+
+              <p class="mt-4 text-sm leading-6 text-(--muted)">
+                Comfortable taking an idea from requirements and architecture through
+                implementation, iteration, and production.
+              </p>
+            </article>
+
+            <article class="bg-(--background) p-8 lg:p-10">
+              <span class="text-sm font-semibold text-(--sage)">03</span>
+
+              <h3 class="mt-12 text-xl font-semibold tracking-tight">Data foundation</h3>
+
+              <p class="mt-4 text-sm leading-6 text-(--muted)">
+                Earlier experience with ETL, data warehousing, SQL, and BI gives me a strong
+                understanding of the systems behind the interface.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="border-t border-(--border)">
+        <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+          <div class="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--terracotta)">
+                About
+              </p>
+
+              <h2
+                class="mt-4 max-w-md text-4xl font-medium leading-tight tracking-[-0.035em] sm:text-5xl"
+              >
+                I like building
+                <span class="font-display font-normal italic"> useful things.</span>
+              </h2>
+            </div>
+
+            <div class="max-w-2xl">
+              <p class="text-xl leading-8 tracking-[-0.015em] sm:text-2xl sm:leading-9">
+                I'm a frontend engineer who enjoys turning ideas into products that are useful,
+                well-designed, and solid underneath.
+              </p>
+
+              <p class="mt-8 text-base leading-7 text-(--muted)">
+                I started my career working with data, ETL, and databases before moving into
+                frontend engineering. That background still shapes how I approach software — I care
+                about what's happening behind the interface as much as what the user sees.
+              </p>
+
+              <p class="mt-6 text-base leading-7 text-(--muted)">
+                I enjoy building products independently, figuring out the architecture, and taking
+                an idea all the way to production.
+              </p>
+
+              <div class="mt-10 flex flex-wrap gap-2">
+                {
+                  ["React", "TypeScript", "GraphQL", "SQL", "Product Engineering"].map((item) => (
+                    <span class="rounded-full border border-(--border) px-4 py-2 text-xs font-medium">
+                      {item}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="border-t border-(--border)">
+        <div class="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-24">
+          <div class="rounded-3xl bg-(--sage-soft) px-8 py-16 sm:px-12 lg:px-16 lg:py-20">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-(--terracotta)">
+              Get in touch
+            </p>
+
+            <div class="mt-6 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h2
+                  class="max-w-2xl text-4xl font-medium leading-tight tracking-[-0.035em] sm:text-5xl lg:text-6xl"
+                >
+                  Let's build something
+                  <span class="font-display font-normal italic"> useful.</span>
+                </h2>
+
+                <p class="mt-6 max-w-xl text-base leading-7 text-(--muted)">
+                  I'm always open to interesting products, engineering problems, and conversations
+                  about building better software.
+                </p>
+              </div>
+
+              <a
+                href="mailto:mayanksolan@gmail.com"
+                class="inline-flex shrink-0 items-center justify-center rounded-full bg-(--foreground) px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                Email me →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="border-t border-(--border)">
+        <div
+          class="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-8"
+        >
+          <p class="font-semibold">Mayank Solan</p>
+
+          <div class="flex gap-6 text-(--muted)">
+            <a
+              href="https://github.com/mayanksolan"
+              target="_blank"
+              rel="noreferrer"
+              class="transition-colors hover:text-(--foreground)"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mayanksolan4/"
+              target="_blank"
+              rel="noreferrer"
+              class="transition-colors hover:text-(--foreground)"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="mailto:mayanksolan@gmail.com"
+              class="transition-colors hover:text-(--foreground)"
+            >
+              Email
+            </a>
+          </div>
+
+          <p class="text-(--muted)">© 2026 Mayank Solan</p>
+        </div>
+      </footer>
+    </main>
+  </div></Layout
+>
