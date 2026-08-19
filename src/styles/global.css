@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: #f7f5f0;
@@ -9,11 +9,28 @@
   --terracotta: #c98f78;
   --terracotta-soft: #ead6cc;
   --border: #dddcd5;
+  --surface: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.6);
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+:root.dark {
+  --background: #171916;
+  --foreground: #f3f1e9;
+  --muted: #b4b6aa;
+  --sage: #a9c29f;
+  --sage-soft: #29352b;
+  --terracotta: #e0a38b;
+  --terracotta-soft: #3d2b27;
+  --border: #3a4039;
+  --surface: #222620;
+  --surface-soft: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 @theme {
-  --font-sans: 'Manrope', sans-serif;
-  --font-display: 'DM Serif Display', serif;
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "DM Serif Display", serif;
 }
 
 * {
@@ -29,6 +46,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.dark .bg-white {
+  background-color: var(--surface);
+}
+
+.dark [class~="bg-white/60"],
+.dark [class~="bg-white/70"] {
+  background-color: var(--surface-soft);
+}
+
+.dark [class~="border-white/60"],
+.dark [class~="border-white/70"] {
+  border-color: var(--border);
 }
 
 .font-display {
