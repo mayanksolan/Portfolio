@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <!-- Navigation -->
     <header class="fixed inset-x-0 top-0 z-50 border-b bg-(--border) backdrop-blur-md">
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-8">
-        <a href="/" class="text-sm font-semibold tracking-tight text-(--foreground)">
+        <a href={import.meta.env.BASE_URL} class="text-sm font-semibold tracking-tight text-(--foreground)">
           Mayank Solan
         </a>
 
@@ -153,7 +153,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
 
                 <a
-                  href="/work/pinhitch"
+                  href={`${import.meta.env.BASE_URL}/work/pinhitch`}
                   class="mt-8 inline-flex text-sm font-semibold underline decoration-(--sage) decoration-2 underline-offset-4"
                 >
                   View case study →
@@ -229,7 +229,7 @@ import Layout from "../layouts/Layout.astro";
                   </div>
 
                   <a
-                    href="/work/reflectme"
+                    href={`${import.meta.env.BASE_URL}/work/reflectme`}
                     class="mt-8 inline-flex text-sm font-semibold underline decoration-(--terracotta) decoration-2 underline-offset-4"
                   >
                     View case study →
