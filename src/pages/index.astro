@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Mayank Solan — Senior Frontend Engineer">
+<Layout title="Mayank Solan — Senior Product Engineer">
   <div class="min-h-[78vh]">
     <!-- Navigation -->
     <header class="fixed inset-x-0 top-0 z-50 border-b bg-(--border) backdrop-blur-md">
@@ -37,7 +37,7 @@ import Layout from "../layouts/Layout.astro";
             class="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)"
           >
             <span class="h-2 w-2 rounded-full bg-(--sage)"></span>
-            Senior Frontend Engineer
+            Senior Product Engineer
           </div>
 
           <h1
@@ -64,6 +64,14 @@ import Layout from "../layouts/Layout.astro";
                 class="rounded-full bg-(--foreground) px-6 py-3 text-sm font-semibold text-(--background) transition-transform hover:-translate-y-0.5"
               >
                 View my work →
+              </a>
+
+              <a
+                href={`${import.meta.env.BASE_URL}/resume.pdf`}
+                download="Mayank-Solan-Resume.pdf"
+                class="rounded-full border bg-(--border) px-6 py-3 text-sm font-semibold transition-colors hover:bg-(--sage-soft)"
+              >
+                Download resume
               </a>
 
               <a
@@ -270,7 +278,7 @@ import Layout from "../layouts/Layout.astro";
               <article class="grid grid-cols-[1fr_auto] gap-6 py-7">
                 <div>
                   <h3 class="text-lg font-semibold">Hatica</h3>
-                  <p class="mt-1 text-sm text-(--muted)">Senior Frontend Engineer</p>
+                  <p class="mt-1 text-sm text-(--muted)">Senior Product Engineer</p>
                 </div>
 
                 <p class="text-sm text-(--muted)">2022 — 2026</p>
